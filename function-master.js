@@ -4,13 +4,27 @@
 
 function objectValues(object) {
     // code
+    var values = [];
+    for (var key in object) {
+        if (object.hasOwnProperty(key)) {
+            values.push(object[key]);
+        }
+    }
+    return values;
 } 
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function keysToString(object) {
+function keysToString(object) { 
+    var keys = [];
+    for (var key in object) {
+        if (object.hasOwnProperty(key)) {
+            keys.push(key);
+        }
+    }
+    return keys.join(' ');
 
 }
 
@@ -19,7 +33,13 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    var values = [];
+    for (var key in object) {
+        if (object.hasOwnProperty(key) && typeof object[key] === 'string') {
+            values.push(object[key]);
+        }
+    }
+    return values.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
