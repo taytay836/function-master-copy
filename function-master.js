@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-    // code
+    // code return object values
     return Object.values(object);
 } 
 
@@ -12,7 +12,8 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+    //return object keys joined with space
+    return Object.keys(object).join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -20,7 +21,11 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    //return string with space
+    return Object.values(object)
+    //filter through values and test if string
+    .filter(value => typeof value === 'string')
+    .join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -28,7 +33,8 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    //check if array or object and return which it is
+    return Array.isArray(collection) ? 'array' : 'object';
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -36,7 +42,9 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    if (string.length === 0) return string; // handle empty strings
+    //return stirng with 1st level capitalized
+    return string[0].toUpperCase() + string.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
